@@ -1,0 +1,22 @@
+#!Users/hezongzhu/.conda/envs/Zz/bin/python3
+#encoding:utf-8
+import csv
+from ping3 import ping, verbose_ping
+ping.DEBUG = True
+
+results = []
+
+with open('surfshark_host.csv') as f:
+    f_csv = csv.reader(f)
+    headers = next(f_csv)
+    for row in f_csv:
+        delay = ping(row[1],timeout=2,unit="ms")
+        if not delay:
+            continue
+        dic = {"host":row[0],"delay":delay}
+        print(dic)
+        results.append(dic)
+
+ret = sorted(results,key=lambda item:item["delay"])
+print(ret)
+
