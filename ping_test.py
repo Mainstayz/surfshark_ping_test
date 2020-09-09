@@ -12,11 +12,14 @@ with open('surfshark_host.csv') as f:
     for row in f_csv:
         delay = ping(row[1],timeout=2,unit="ms")
         if not delay:
+            print(f"{row[1]} delay ....")
             continue
         dic = {"host":row[0],"delay":delay}
         print(dic)
         results.append(dic)
 
 ret = sorted(results,key=lambda item:item["delay"])
-print(ret)
+
+for i in range(10):
+    print(ret[i])
 
