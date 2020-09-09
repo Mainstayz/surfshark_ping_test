@@ -3,9 +3,11 @@ import sys
 import socket
 import csv
 
-dir =  os.path.dirname(sys.argv[0])
+dir =  os.path.abspath(os.path.dirname(__file__))
+
 tcp_arr = []
 udp_arr = []
+
 for _,_,files in os.walk(dir):
     for file in files:
         if (file.endswith("_tcp.ovpn")):
