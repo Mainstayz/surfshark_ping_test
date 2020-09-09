@@ -1,4 +1,3 @@
-#!Users/hezongzhu/.conda/envs/Zz/bin/python3
 #encoding:utf-8
 import csv
 import socket
