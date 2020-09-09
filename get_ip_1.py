@@ -26,8 +26,8 @@ for f in udp_arr:
         dic = {'host':f,'ip':ip}
         rows.append(dic)
         print(f"write {dic}")
-
-
+    else:
+        print(f"no {f} {ip}")
 
 
 headers = ['host', 'ip']
