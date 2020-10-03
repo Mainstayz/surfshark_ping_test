@@ -31,7 +31,6 @@ for f in udp_arr:
     else:
         print(f"no {f} {ip}")
 
-
 headers = ['host', 'ip']
 with open('surfshark_host.csv','w') as f:
     f_csv = csv.DictWriter(f, headers)

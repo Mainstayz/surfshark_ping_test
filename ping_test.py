@@ -13,11 +13,13 @@ with open('surfshark_host.csv') as f:
         if not delay:
             print(f"{row[0]} {row[1]} delay ....")
             continue
-        dic = {"host":row[0],"delay":delay}
+        dic = {"host":row[0],"ip":row[1],"delay":delay}
         print(dic)
         results.append(dic)
 
 ret = sorted(results,key=lambda item:item["delay"])
+
+print("======｜｜｜======")
 
 for i in range(10):
     print(ret[i])
