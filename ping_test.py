@@ -12,9 +12,9 @@ async def get_delay(host, ip):
     print(f"hello -> {host}")
     delay = ping(ip, timeout=2, unit="ms")
     if delay:
-        print(f"{host} === {ip} ===> {delay} ms.")
+        print(f"{host}({ip}) ===> {delay} ms.")
     else:
-        print(f"{host} === {ip} was timeout.")
+        print(f"{host}({ip}) was timeout.")
     dic = {"host": host, "ip": ip, "delay": delay}
     return dic
 
